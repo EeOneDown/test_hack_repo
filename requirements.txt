@@ -1,1 +1,2 @@
+pymysql
 Flask>=0.12
