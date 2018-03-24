@@ -69,11 +69,14 @@ CREATE TABLE IF NOT EXISTS user_temperatures
   FOREIGN KEY (temperature_id) REFERENCES temperatures (id)
 )
   ENGINE = InnoDB;
-
-CREATE INDEX user_temperatures_temperatures_id_fk
-  ON user_temperatures (temperature_id);
-
 """
+        )
+        con.commit()
+
+        cursor.execute(
+            """CREATE INDEX user_temperatures_temperatures_id_fk
+  ON user_temperatures (temperature_id);
+        """
         )
         con.commit()
 
